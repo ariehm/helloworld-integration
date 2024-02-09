@@ -14,7 +14,7 @@ jobs:
           fetch-depth: 0 # See: https://goreleaser.com/ci/actions/
 
       - name: Run HelloWorld
-        uses: ariehm/helloworld-action@v0.0.1
+        uses: ariehm/helloworld-action@v0.0.2
         with:
           version: latest
           args: check
