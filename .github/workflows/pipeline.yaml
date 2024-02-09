@@ -1,0 +1,23 @@
+name: PR Pipeline
+
+on: [push, workflow_dispatch]
+
+jobs:
+  say-hello:
+    name: Say Hello
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code into the Go module directory
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # See: https://goreleaser.com/ci/actions/
+
+      - name: Run HelloWorld
+        uses: ariehm/helloworld-action@v0.0.2
+        with:
+          version: latest
+          args: check
+        # env:
+          # GITHUB_TOKEN: ${{ secrets.GO_RELEASER_GITHUB_TOKEN }}
+
